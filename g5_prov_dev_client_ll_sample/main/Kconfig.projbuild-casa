@@ -1,0 +1,38 @@
+menu "Example Configuration"
+
+config WIFI_SSID
+    string "WiFi SSID"
+	default "MOVISTAR_E946"
+	help
+		SSID (network name) for the example to connect to.
+
+config WIFI_PASSWORD
+    string "WiFi Password"
+	default "93F5BBF115EE67DDE976"
+	help
+		WiFi password (WPA or WPA2) for the example to use.
+		Can be left blank if the network has no security set.
+
+config IOTHUB_CONNECTION_STRING
+    string "IOT Hub Device Connection String"
+	default "HostName=MIot01.azure-devices.net;DeviceId=devjlr001;SharedAccessKey=ohyUtVH4D8rx4Ph9dahc5RS6FCykURxH39LSty9g0JM="
+	help
+		String containing Hostname, Device Id & Device Key in the format:
+		HostName=<host_name>;DeviceId=<device_id>;SharedAccessKey=<device_key>
+		HostName=<host_name>;DeviceId=<device_id>;SharedAccessSignature=<device_sas_token>
+		You can get this from the iothub-explorer CLI or the Azure Portal
+
+config DEVICE_COMMON_NAME
+    string "Device Leaf Certificate Common Name"
+    default "f1device001"
+    help
+        Common name of Leaf Certificate
+
+config DPS_ID_SCOPE
+    string "Unique DPS ID Scope of Device provisioning service"
+    default "0ne0004F626"
+    help
+        This is the unique ID scope of DPS, and can be found under "Overview"
+        section of your DPS on azure IoT portal
+
+endmenu
